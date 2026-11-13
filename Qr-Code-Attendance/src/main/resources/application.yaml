@@ -1,0 +1,53 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: Qr-Code-Attendance
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/qr_attendance_system
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: mirfan916152@gmail.com
+    password: mrcb ehia tzhu yzjr
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+  # file upload configurations
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+restaurant:
+  file:
+    path: uploads/restaurant_banner/
+
+jwt:
+  secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+  expiration:
+    access: 900000
+    refresh: 86400000
